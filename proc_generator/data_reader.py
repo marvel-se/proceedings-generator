@@ -55,6 +55,11 @@ def read_articles(fname):
                 item['topic'] = 'no topic'
             if item['id_session'] == '':
                 item['id_session'] = 'SO-XX-X'
+            if 'abstract' in item:
+                if item['abstract'] == '':
+                    item['abstract'] = None
+            else:
+                item['abstract'] = None
             
             # Process the authors field to split names
             authors = item['authors'].split(',')
