@@ -19,23 +19,20 @@ import jinja2
 from jinja2 import Environment, FileSystemLoader
 
 import data_reader
-reload(data_reader)
 
 from data_reader import (
     read_articles, read_sponsors, read_sessions,
     manage_pdf)
 
 ### Read configuration
-config = {}
-execfile('config.py', {}, config)
+import config
+
+config_vars = config.c
+data = config.data
 
 # locale (for time formatting)
-print('Lang set to {}'.format(config['c']['lang']))
-print(locale.setlocale(locale.LC_ALL, (config['c']['lang'], 'UTF-8')))
-
-
-config_vars = config['c']
-data = config['data']
+print('Lang set to {}'.format(config_vars['lang']))
+print(locale.setlocale(locale.LC_ALL, (config_vars['lang'], 'UTF-8')))
 
 
 # Where to write statictics:

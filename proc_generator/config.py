@@ -23,7 +23,7 @@ data['chair_pkg_path'] = '../chairman package'
 c={}
 
 # language, for <html lang="xx"> attribute:
-c['lang'] = 'fr'
+c['lang'] = 'en'
 
 # Event (conference) parameters:
 c['event_name'] = 'SGE 2014'
