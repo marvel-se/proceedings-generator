@@ -60,6 +60,8 @@ print('{:d} articles read from table "{}"'.format(
 def create_skeleton(render_path):
     '''create the skeleton of directories for the `render_path`
     '''
+    if not os.path.isdir('../chairman package'):
+        os.mkdir('../chairman package')
     subdirs = ['articles', 'images', 'topics', 'sessions']
     if not os.path.isdir(render_path):
         os.mkdir(render_path)
