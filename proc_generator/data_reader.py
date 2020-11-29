@@ -39,7 +39,7 @@ def read_articles(fname):
     re_affil = re.compile(r'\((\d+)\)')
     
     with io.open(fname, encoding='utf-8') as f:
-        c = csv.reader(utf_8_encoder(f), delimiter=';')
+        c = csv.reader(utf_8_encoder(f), delimiter=',')
         
         # 1) Read the headers
         header = c.next()
@@ -129,8 +129,7 @@ def read_sessions(fname):
         
         # 1) Read the headers
         header = c.next()
-        assert header == ['id', 'type', 'name', 'nb papiers', 'location', 'date', 'begin', 'end', 'chairmen']
-        
+        assert header == ['id', 'type', 'name', 'num_papers', 'location', 'date', 'begin', 'end', 'chairmen']
         sessions = {}
         for line in c:
             if len(line) < len(header): continue

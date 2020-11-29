@@ -314,7 +314,10 @@ with io.open(join(data['render_path'], 'article_list.html'),
 template = env.get_template('article_detail.html')
 
 for art in articles:
-    fname = 'article_{:s}.html'.format(art['docid'])
+    if art['docid']:
+        fname = 'article_{:s}.html'.format(art['docid'])
+    else:
+        fname = 'article_{:s}.html'.format(art['file'])
     with io.open(join(data['render_path'], 'articles', fname),
                  'w', encoding='utf-8') as out:
         out.write(template.render(config_vars, article=art, root_path='..'))
