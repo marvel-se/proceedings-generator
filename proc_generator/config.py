@@ -6,7 +6,7 @@
 """
 
 from __future__ import unicode_literals
-
+import translation
 ### Main configuration parameters
 
 data = {}
@@ -33,3 +33,5 @@ c['event_website'] = 'http://www.sge-conf.fr/sge-2014/'
 c['event_logo'] = 'logo_sge.png'
 
 c['website_credits'] = 'Pierre Haessig, laboratoire SATIE'
+
+c['translation'] = translation.tyeste

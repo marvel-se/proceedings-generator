@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% import 'article_macros.html' as article_macros %}
-
 {% block title %}Fiche article {{
     article_macros.etal(article.authors_split)
 }}{% endblock title %}
@@ -14,7 +13,7 @@
   {%- else -%}
   <div class='download-pdf not-available'>
     <img src='{{ root_path }}/images/pdf_icon.png' alt='pdf icon'>
-    <p>Présentation PDF disponible prochainement</p>
+    <p>{{ translation.teste }}</p>
   </div>
   {%- endif %}
   
