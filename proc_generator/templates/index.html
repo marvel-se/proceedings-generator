@@ -14,17 +14,19 @@
   Site internet de la conférence :
   <a href='{{ event_website }}'>{{ event_website }}</a>
   </p>
+  {%- if topics -%}
+    <h2>Thématiques</h2>
+    
+    <ul>
+    {% for top, art_list in topics|dictsort %}
+      <li> {{ top }} :
+        <a href='topics/topic_{{ topics_code.get(top) }}.html'>
+          {{ art_list|count }} articles</a>
+      </li>
+    {% endfor %}
+    </ul>
+  {%- endif -%}
   
-  <h2>Thématiques</h2>
-  
-  <ul>
-  {% for top, art_list in topics|dictsort %}
-    <li> {{ top }} :
-      <a href='topics/topic_{{ topics_code.get(top) }}.html'>
-        {{ art_list|count }} articles</a>
-    </li>
-  {% endfor %}
-  </ul>
   
   <h2>Sponsors</h2>
   

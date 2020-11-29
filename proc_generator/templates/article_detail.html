@@ -31,10 +31,13 @@
     {{ article.labos }}
     </small></p>
     
+    
     <p>
+    {%- if article.topic -%}
     <strong>Thématique</strong> :
     <a href="{{ root_path }}/topics/topic_{{ topics_code.get(article.topic) }}.html">
         {{ article.topic }}</a>
+    {%- endif -%}
     <br>
     <strong>Session</strong> :
     <a href="{{ root_path }}/sessions/session_{{ article.id_session }}.html">

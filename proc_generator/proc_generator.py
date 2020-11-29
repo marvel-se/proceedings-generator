@@ -84,23 +84,34 @@ topics = {}
 
 for art in articles:
     top = art['topic']
+    if top == None:
+        topics = None
+        break
     if top not in topics:
         topics[top] = []
     # Append article to its topic:
     topics[top].append(art)
 
+
+
 print('\nTopics stats', file=stats_file)
 print('------------', file=stats_file)
-for top in sorted(topics):
-    n_art = len(topics[top])
-    n_poster = len([art for art in topics[top] if art['media'] == 'poster'])
-    n_oral = len([art for art in topics[top] if art['media'] == 'oral'])
-    print(' - "{}": {:d} articles'.format(top, n_art), end='\n   ', file=stats_file)
-    print('({:d} orals, {:d} posters)'.format(n_oral, n_poster), file=stats_file)
-
-# build topic codes:
-topics_code = {top: '{:03d}'.format(idx)
+topics_code = {}
+if topics:
+    for top in sorted(topics):
+        n_art = len(topics[top])
+        n_poster = len([art for art in topics[top] if art['media'] == 'poster'])
+        n_oral = len([art for art in topics[top] if art['media'] == 'oral'])
+        print(' - "{}": {:d} articles'.format(top, n_art), end='\n   ', file=stats_file)
+        print('({:d} orals, {:d} posters)'.format(n_oral, n_poster), file=stats_file)
+    
+    # build topic codes:
+    topics_code = {top: '{:03d}'.format(idx)
                for idx, top in enumerate(sorted(topics))}
+else:
+    print('No topics found on file {:s}'.format(data['article_table']))
+
+
 
 config_vars['topics'] = topics
 
@@ -326,13 +337,13 @@ for art in articles:
 
 # 4) Detailed topic pages:
 template = env.get_template('topic_detail.html')
-
-for top in topics:
-    fname = 'topic_{}.html'.format(topics_code[top])
-    with io.open(join(data['render_path'], 'topics', fname),
-                 'w', encoding='utf-8') as out:
-        out.write(template.render(config_vars, topic=top,
-                                  articles=topics[top], root_path='..'))
+if topics:
+    for top in topics:
+        fname = 'topic_{}.html'.format(topics_code[top])
+        with io.open(join(data['render_path'], 'topics', fname),
+                    'w', encoding='utf-8') as out:
+            out.write(template.render(config_vars, topic=top,
+                                    articles=topics[top], root_path='..'))
 
 # 5) List of authors:
 template = env.get_template('author_list.html')

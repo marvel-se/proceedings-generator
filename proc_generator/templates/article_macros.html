@@ -63,10 +63,11 @@
     <small class='article-affil'>{{ art.labos }}</small>
     <br>
     {% endif %}
-    
+    {%- if art.topic -%}
     <strong>Thématique</strong> :
     <a href="{{ root_path }}/topics/topic_{{ topics_code.get(art.topic) }}.html">
         {{ art.topic }}</a>,
+    {%- endif -%}
     
     <strong>Session</strong> :
     <a href="{{ root_path }}/sessions/session_{{ art.id_session }}.html">

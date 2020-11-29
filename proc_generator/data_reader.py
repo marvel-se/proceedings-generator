@@ -51,10 +51,15 @@ def read_articles(fname):
                     for idx, head in enumerate(header)}
             
             # Manually fill blanks:
-            if item['topic'] == '':
-                item['topic'] = 'no topic'
+            if 'topic' in item['topic']:
+                if item['topic'] == '':
+                    item['topic'] = 'no topic'
+            else:
+                item['topic'] = None
+
             if item['id_session'] == '':
                 item['id_session'] = 'SO-XX-X'
+
             if 'abstract' in item:
                 if item['abstract'] == '':
                     item['abstract'] = None
