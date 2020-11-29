@@ -10,13 +10,18 @@ import translation
 ### Main configuration parameters
 
 data = {}
+
+# SBQS data
+
 # Input data:
-data['path'] = '../SGE2014_data'
-data['article_table'] = 'bilan_papiers_programme.csv'
-data['session_table'] = 'sessions.csv'
+data['path'] = '../SBQS2020_data'
+data['delimiter'] = ','
+data['article_table'] = 'SBQS2020_articles.csv'
+data['session_table'] = 'SBQS2020_sessions.csv'
 # Output path:
-data['render_path'] = '../SGE2014_proceedings'
+data['render_path'] = '../SBQS_proceedings'
 data['chair_pkg_path'] = '../chairman package'
+
 
 
 ### Event parameters dict

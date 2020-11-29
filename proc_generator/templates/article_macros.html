@@ -1,5 +1,10 @@
 {% macro title_link(art, root_path) -%}
+{% if art.docid -%}
 <a class='article-title' href="{{ root_path }}/articles/article_{{ art.docid }}.html">
+{%- else -%}
+<a class='article-title' href="{{ root_path }}/articles/article_{{ art.file }}.html">
+{%- endif %}
+
 <em class='article-title'>"{{ art.title }}"</em></a>
 {%- endmacro %}
 
@@ -58,10 +63,11 @@
     <small class='article-affil'>{{ art.labos }}</small>
     <br>
     {% endif %}
-    
+    {%- if art.topic -%}
     <strong>Thématique</strong> :
     <a href="{{ root_path }}/topics/topic_{{ topics_code.get(art.topic) }}.html">
         {{ art.topic }}</a>,
+    {%- endif -%}
     
     <strong>Session</strong> :
     <a href="{{ root_path }}/sessions/session_{{ art.id_session }}.html">
