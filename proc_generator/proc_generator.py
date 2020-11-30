@@ -109,7 +109,7 @@ if topics:
     topics_code = {top: '{:03d}'.format(idx)
                for idx, top in enumerate(sorted(topics))}
 else:
-    print('No topics found on file {:s}'.format(data['article_table']))
+    print('0 topics found on file', file=stats_file)
 
 
 
