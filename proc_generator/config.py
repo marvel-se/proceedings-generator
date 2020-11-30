@@ -6,7 +6,8 @@
 """
 
 from __future__ import unicode_literals
-import translation
+import en
+import fr
 ### Main configuration parameters
 
 data = {}
@@ -39,4 +40,10 @@ c['event_logo'] = 'logo_sge.png'
 
 c['website_credits'] = 'Pierre Haessig, laboratoire SATIE'
 
-c['translation'] = translation.tyeste
+c['translate'] = en.english
+
+def set_language(lang):
+    if lang == 'en':
+        c['lang'] = en.english
+    else:
+        c['lang'] = fr.french
