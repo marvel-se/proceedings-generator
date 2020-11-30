@@ -109,7 +109,7 @@ if topics:
     topics_code = {top: '{:03d}'.format(idx)
                for idx, top in enumerate(sorted(topics))}
 else:
-    print('No topics found on file {:s}'.format(data['article_table']))
+    print('0 topics found on file', file=stats_file)
 
 
 
@@ -126,9 +126,10 @@ for art in articles:
     sessions[s_id].append(art)
 
 # Sort articles in each session using (order, authors)
-for s_id in sessions:
-    sort_key = lambda art: (art['order'], art['authors'])
-    sessions[s_id].sort(key=sort_key)
+if art['order']:
+    for s_id in sessions:
+        sort_key = lambda art: (art['order'], art['authors'])
+        sessions[s_id].sort(key=sort_key)
 
 # Read session description
 fname_sessions = join(data['path'], data['session_table'])

@@ -51,7 +51,7 @@ def read_articles(fname):
                     for idx, head in enumerate(header)}
             
             # Manually fill blanks:
-            if 'topic' in item['topic']:
+            if 'topic' in item:
                 if item['topic'] == '':
                     item['topic'] = 'no topic'
             else:
@@ -65,6 +65,18 @@ def read_articles(fname):
                     item['abstract'] = None
             else:
                 item['abstract'] = None
+
+            if 'media' in item:
+                if item['media'] == '':
+                    item['media'] = None
+            else:
+                item['media'] = None
+            
+            if 'order' in item:
+                if item['order'] == '':
+                    item['order'] = None
+            else:
+                item['order'] = None
             
             # Process the authors field to split names
             authors = item['authors'].split(',')
