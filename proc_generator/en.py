@@ -18,9 +18,15 @@ english = {
     "session": "Session"
   },
   "author_list":{ 
-    "list_authors": "Authors List"
+    "list_authors": "Authors List",
+    "contribution_by_author": "Contributions list sorted by authors"
   },
   "base":{
+    "home": "Home",
+    "contributions": "Contributions",
+    "sessions": "Sessions",
+    "authors": "Authors",
+    "labs": "Laboratories",
     "conference_proceedings": "Conference Proceedings",
     "web_design_credit": "Web Design: "
   },
