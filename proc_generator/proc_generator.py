@@ -126,9 +126,10 @@ for art in articles:
     sessions[s_id].append(art)
 
 # Sort articles in each session using (order, authors)
-for s_id in sessions:
-    sort_key = lambda art: (art['order'], art['authors'])
-    sessions[s_id].sort(key=sort_key)
+if art['order']:
+    for s_id in sessions:
+        sort_key = lambda art: (art['order'], art['authors'])
+        sessions[s_id].sort(key=sort_key)
 
 # Read session description
 fname_sessions = join(data['path'], data['session_table'])

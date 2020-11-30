@@ -72,6 +72,12 @@ def read_articles(fname):
             else:
                 item['media'] = None
             
+            if 'order' in item:
+                if item['order'] == '':
+                    item['order'] = None
+            else:
+                item['order'] = None
+            
             # Process the authors field to split names
             authors = item['authors'].split(',')
             authors_split = []
