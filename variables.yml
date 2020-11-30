@@ -1,0 +1,57 @@
+proc_generator:
+  templates:
+    article_detail:
+      article_files: Fiche article(MISSING)
+      article_pdf: Article PDF(MISSING)
+      presentation_pdf: Présentation PDF disponible prochainement
+      affiliations: Affiliations
+      abstract: Résumé
+    article_list:
+    article_macros:
+    author_list: 
+      list_authors: Liste des auteurs
+    base:
+      web_formatting: mise en forme web
+    chair_eval_index: 
+      session_evaluation_sheet: Fiches d'évaluation des sessions
+      documents_shared_to_president_session: Documents à distribuer aux chairmen de chaque session, pour l'évaluation des sessions et des présentations.
+      complete_for_each_session: 'Pour chaque session il y a à remplir :'
+      all_files: 1) Ensemble des fiches
+      files_sorted_by_session: 'Fiches concaténées dans un fichiers, classées par session :'
+      download: Télécharger les
+      pdf_files: fiches PDF
+      see: Voir les
+      html_files: fiches HTML
+      sheets_separated_by_session: 2) Fiches séparées par sessions
+      download_pdf_files: Cliquer sur une session pour télécharger la fiche PDF correspondante
+      president: Président(e)
+      web_formatting: 'mise en forme web :'
+    chair_eval_presentation:
+      presentation_evaluation: Évaluation des présentations
+      contributions: Évaluation des contributions complètes dans l'optique de leur présélection pour publication dans des revues partenaires.
+      title: Titre
+      presented_by: 'Présentée par :'
+      presentation_article: Votre évaluation de l'article et de la présentation
+      contribution: 'Contenu scientifique de la contribution complète :'
+      faible: faible
+      excellent: excellente
+      originality_work_presented: 'Originalité des travaux présentés :'
+      qualite: 'Qualité de la présentation orale ou poster :'
+      echanges: 'Qualité des échanges :'
+      note: 'Note globale de la contribution :'
+      publication: Publication dans une revue partenaire
+      concernant: 'Concernant la présélection par le CS SGE de la contribution pour publication dans une revue internationale partenaire, êtes vous :'
+      défavorable: défavorable
+      plutôt_def: plutôt défavorable
+      plutôt_fav: plutôt favorable
+      favorable: favorable
+      nb: 'NB : Si le papier est présélectionné, il sera procédé à un reviewing conforme aux règles des revues partenaires (EJEE, EPE, EJAP). Ce reviewing sera réalisé par un comité ad-hoc sur la base de la version complète en langue anglaise de l’article SGE.'
+    chair_eval_session: 
+      compte: Compte-rendu de session(session_summary)(DONE) ****(trocar todos os 'president' para 'chair')
+      faible: ****faible(MISSING, alternativa->"low/weak")
+      excellente: ****excellente(MISSING, alternativa->excellent)
+      comite: ****Le comité d’organisation SGE vous remercie vivement pour votre contribution et votre expertise, essentielles au symposium.
+    index:
+    lab_list:
+      labs_list: ****Liste des laboratoire(MISSING)
+    
