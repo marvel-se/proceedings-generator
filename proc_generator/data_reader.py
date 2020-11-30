@@ -172,10 +172,10 @@ def manage_pdf(art, data_config, force_copy=False):
     source_path = data_config['path']
     render_path = data_config['render_path']
     
-    pdf_source = join(source_path, 'articles', art['docid']+'.pdf')
-    pdf_dest = join('articles', 'article_'+art['docid']+'.pdf')
+    pdf_source = join(source_path, 'articles', art['file']+'.pdf')
+    pdf_dest = join('articles', 'article_'+art['file']+'.pdf')
     if not os.path.exists(pdf_source):
-        print('article {} has no PDF!'.format(art['docid']))
+        print('article {} has no PDF!'.format(art['file']))
         return None
     else:
         if not os.path.exists(join(render_path, pdf_dest)) or force_copy:

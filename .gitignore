@@ -4,6 +4,7 @@ word_clouds/words_*.txt
 word_clouds/words_*.svg
 word_clouds/words_*.png
 SBQS2020_data/
+SBQS2020_data/articles/
 *_proceedings/
 proc_generator/*stats.txt
 chairman\ package/
