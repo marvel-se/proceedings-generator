@@ -1,13 +1,12 @@
 {% extends "base.html" %}
 {% set active_page = "lab_list.html" -%}
 
-{% block title %}Liste des laboratoire{% endblock title %}
+{% block title %}{{translate.lab_list.labs_list}}{% endblock title %}
 {% block content %}
-  <h1>Laboratoires et centres de recherche</h1>
+  <h1>{{translate.lab_list.labs}}</h1>
   
   <p>
-  <em>Liste des contributions, classées par laboratoires, centres de recherche
-  ou institutions des contributeurs de la conférence :
+  <em>{{translate.lab_list.list_of_contributions}}
   </em>
   </p>
   

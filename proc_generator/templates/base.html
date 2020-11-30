@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>{% block title %}Actes de la conférence{% endblock %} - {{ event_name }}</title>
+  <title>{% block title %}{{translate.base.conference_proceedings}}{% endblock %} - {{ event_name }}</title>
   <meta name="description" content="Actes de la conférence {{ event_name }}">
   <meta name="author" content="organisateurs {{ event_name }}">
   <meta name="viewport" content="width=device-width">
@@ -50,7 +50,7 @@
   <a href='{{ event_website }}'>{{ event_name }}</a>,
   {{ event_date }}, {{ event_location }}
   <br>
-  <small class='credits'>mise en forme web : {{ website_credits }} </small>
+  <small class='credits'>{{translate.base.web_design_credit}}{{ website_credits }} </small>
   {% endblock footer %}
 </footer>
 </div>

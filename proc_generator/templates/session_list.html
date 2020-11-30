@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% set active_page = "session_list.html" -%}
 
-{% block title %}Programme des session{% endblock title %}
+{% block title %}{{translate.session_list.session_program}}{% endblock title %}
 {% block content %}
-  <h1>Programme des sessions</h1>
+  <h1>{{translate.session_list.session_program}}</h1>
 
   {% for day, day_group in sessions_groups|dictsort %}
     <h2 class='day'>{{ day.strftime('%A %d %B %Y') }}</h2>

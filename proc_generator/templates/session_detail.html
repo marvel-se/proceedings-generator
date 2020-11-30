@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
-{% block title %}Session {{ session.name }}{% endblock title %}
+{% block title %}{{translate.session_detail.session_title}} {{ session.name }}{% endblock title %}
 {% block content %}
 
-  <h1>Session "{{ session.name }}" <small>({{ session.id }})</small></h1>
+  <h1>{{translate.session_detail.session_title}} "{{ session.name }}" <small>({{ session.id }})</small></h1>
   
   <p class='session-info {{ session.location|lower|replace(' ','-') }}'>
   {{ session.date.strftime('%A %d %B %Y') }},
@@ -16,13 +16,13 @@
   {% if session.parallel_next %}
   <nav class='session-carousel'>
     <em class='caption'>...en parallèle...</em>
-    <a href='session_{{ session.parallel_prev }}.html' class='prev'>← session {{ session.parallel_prev }}</a>
-    <a href='session_{{ session.parallel_next}}.html' class='next'>session {{ session.parallel_next }} →</a>
+    <a href='session_{{ session.parallel_prev }}.html' class='prev'>← {{translate.session_detail.session}} {{ session.parallel_prev }}</a>
+    <a href='session_{{ session.parallel_next}}.html' class='next'>{{translate.session_detail.session}} {{ session.parallel_next }} →</a>
   </nav>
   {% endif %}
 
   <p>
-  <strong>Président(e){{ 's'
+  <strong>{{translate.session_detail.session_chair}}{{ 's'
     if session.chairmen_split|count > 1 else ''}}</strong> : {{ session.chairmen_split|join(', ') }}
   </p>
   
@@ -31,7 +31,7 @@
   {% endif %}
   
   <p>
-  {{sessions[session.id]|count}} articles dans cette session :
+  {{sessions[session.id]|count}} {{translate.session_detail.articles}}
   </p>
   
   {% import 'article_macros.html' as article_macros %}
@@ -40,7 +40,7 @@
     </ul>
   
   <nav>
-  <a href='../session_list.html'>Retour à la liste des sessions</a>
+  <a href='../session_list.html'>{{translate.session_detail.return}}</a>
   </nav>
   
 {% endblock content %}

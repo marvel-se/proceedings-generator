@@ -2,33 +2,31 @@
 {% set active_page = "index.html" -%}
 
 {% block content %}
-  <h1>Actes de la conférence</h1>
+  <h1>{{translate.index.conference_proceedings}}</h1>
 
   <ul>
-    <li><a href='article_list.html'>Liste de toutes les contributions</a></li>
-    <li><a href='session_list.html'>Programme des sessions</a></li>
-    <li><a href='author_list.html'>Les auteurs</a></li>
+    <li><a href='article_list.html'>{{translate.index.list_all_contributions}}</a></li>
+    <li><a href='session_list.html'>{{translate.index.session_program}}</a></li>
+    <li><a href='author_list.html'>{{translate.index.the_authors}}</a></li>
   </ul>
   
   <p>
-  Site internet de la conférence :
+  {{translate.index.website}}
   <a href='{{ event_website }}'>{{ event_website }}</a>
   </p>
-  {%- if topics -%}
-    <h2>Thématiques</h2>
-    
-    <ul>
-    {% for top, art_list in topics|dictsort %}
-      <li> {{ top }} :
-        <a href='topics/topic_{{ topics_code.get(top) }}.html'>
-          {{ art_list|count }} articles</a>
-      </li>
-    {% endfor %}
-    </ul>
-  {%- endif -%}
   
+  <h2>{{translate.index.theme}}</h2>
   
-  <h2>Sponsors</h2>
+  <ul>
+  {% for top, art_list in topics|dictsort %}
+    <li> {{ top }} :
+      <a href='topics/topic_{{ topics_code.get(top) }}.html'>
+        {{ art_list|count }} articles</a>
+    </li>
+  {% endfor %}
+  </ul>
+  
+  <h2>{{translate.index.sponsors}}</h2>
   
   <ul class='sponsor_list'>
   {% for spon in sponsors %}

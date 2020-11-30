@@ -1,91 +1,91 @@
 {% macro eval_presentation(art, session) -%}
-<h1 class='title'>Évaluation des présentations</h1>
+<h1 class='title'>{{translate.chair_eval_presentation.eval}}</h1>
 
 <p><em><small>
-Évaluation des contributions complètes dans l'optique de leur présélection pour publication dans des revues partenaires.
+{{translate.chair_eval_presentation.contributions}}
 </small></em></p>
 
 <p class='chairmen'>
-<strong>Président(es) de session</strong><sup>*</sup> :
+<strong>{{translate.chair_eval_presentation.session_chair}}</strong><sup>*</sup> :
 {{ session.chairmen_split|join(' — ') }}
 <br>
-<small><sup>*</sup> Entourez votre nom (et amendez/corrigez si nécessaire).</small>
+<small><sup>*</sup> {{translate.chair_eval_presentation.verify_your_name}}</small>
 </p>
 
 <div class='info-box'>
-  <p><strong>Titre</strong>
+  <p><strong>{{translate.chair_eval_presentation.title}}</strong>
   <em class="article-title">"{{ art.title}}"</em>
   <br>
   (contribution n°{{ art.docid }})
   </p>
 
-  <p><strong>Auteurs</strong> :
+  <p><strong>{{translate.chair_eval_presentation.authors}}</strong> :
   <span class='article-authors'>{{ art.authors_no_affil }}</span>
   </p>
 
-  <p>Présentée par :
+  <p>{{translate.chair_eval_presentation.presented_by}}
     <span class='blank' style='width:20em;'>&nbsp;</span>
   </p>
 </div>
 
 <div class='questions'>
-<h2 class='questions-title'>Votre évaluation de l'article et de la présentation</h2>
+<h2 class='questions-title'>{{translate.chair_eval_presentation.presentation_article}}</h2>
 
 <div class='question'>
-  <h3>Contenu scientifique de la contribution complète :</h3>
+  <h3>{{translate.chair_eval_presentation.contribution}}</h3>
 
   <table class='answer'>
     <tr>
-      <td>faible</td>
-      <td>moyenne</td>
-      <td>bonne</td>
-      <td>excellente</td>
+      <td>{{translate.chair_eval_presentation.poor}}</td>
+      <td>{{translate.chair_eval_presentation.average}}</td>
+      <td>{{translate.chair_eval_presentation.good}}</td>
+      <td>{{translate.chair_eval_presentation.excellent}}</td>
     </tr>
   </table>
 </div>
 
 <div class='question'>
-  <h3>Originalité des travaux présentés :</h3>
+  <h3>{{translate.chair_eval_presentation.original}}</h3>
 
   <table class='answer'>
     <tr>
-      <td>faible</td>
-      <td>moyenne</td>
-      <td>bonne</td>
-      <td>excellente</td>
+      <td>{{translate.chair_eval_presentation.poor}}</td>
+      <td>{{translate.chair_eval_presentation.average}}</td>
+      <td>{{translate.chair_eval_presentation.good}}</td>
+      <td>{{translate.chair_eval_presentation.excellent}}</td>
     </tr>
   </table>
 </div>
 
 <div class='question'>
-  <h3>Qualité de la présentation orale ou poster :</h3>
+  <h3>{{translate.chair_eval_presentation.presentation_quality}}</h3>
 
   <table class='answer'>
     <tr>
-      <td>faible</td>
-      <td>moyenne</td>
-      <td>bonne</td>
-      <td>excellente</td>
+      <td>{{translate.chair_eval_presentation.poor}}</td>
+      <td>{{translate.chair_eval_presentation.average}}</td>
+      <td>{{translate.chair_eval_presentation.good}}</td>
+      <td>{{translate.chair_eval_presentation.excellent}}</td>
     </tr>
   </table>
 </div>
 
 
 <div class='question'>
-  <h3>Qualité des échanges :</h3>
+  <h3>{{translate.chair_eval_presentation.interaction_quality}}</h3>
 
   <table class='answer'>
     <tr>
-      <td>faible</td>
-      <td>moyenne</td>
-      <td>bonne</td>
-      <td>excellente</td>
+      <td>{{translate.chair_eval_presentation.poor}}</td>
+      <td>{{translate.chair_eval_presentation.average}}</td>
+      <td>{{translate.chair_eval_presentation.good}}</td>
+      <td>{{translate.chair_eval_presentation.excellent}}</td>
     </tr>
   </table>
 </div>
 
 <div class='question'>
-  <h3>Note globale de la contribution :</h3>
+  <h3>{{translate.chair_eval_presentation.note}}</h3>
 
   <p class='answer'>
   <span class='blank' style='width:2em;'>&nbsp;</span> /10
@@ -93,30 +93,30 @@
 </div>
 
 <div class='question'>
-  <h3>Publication dans une revue partenaire</h3>
+  <h3>{{translate.chair_eval_presentation.publication}}</h3>
 
   <p>
-  Concernant la présélection par le CS SGE de la contribution pour publication dans une revue internationale partenaire, êtes vous :
+  {{translate.chair_eval_presentation.concerning}}
   </p>
 
   <table class='answer'>
     <tr>
-      <td>défavorable</td>
-      <td>plutôt défavorable</td>
-      <td>plutôt favorable</td>
-      <td>favorable</td>
+      <td>{{translate.chair_eval_presentation.disadvantageous}}</td>
+      <td>{{translate.chair_eval_presentation.mostly_disadvantageous}}</td>
+      <td>{{translate.chair_eval_presentation.mostly_advantageous}}</td>
+      <td>{{translate.chair_eval_presentation.advantageous}}</td>
     </tr>
   </table>
 
   <p>
     <small>
-    NB : Si le papier est présélectionné, il sera procédé à un reviewing conforme aux règles des revues partenaires (EJEE, EPE, EJAP). Ce reviewing sera réalisé par un comité ad-hoc sur la base de la version complète en langue anglaise de l’article SGE.
+    {{translate.chair_eval_presentation.obs}}
     </small>
   </p>
 </div>
 
 <div class='question'>
-  <h3>Commentaires éventuels :</h3>
+  <h3>{{translate.chair_eval_presentation.optional_comments}}</h3>
 
   <p class='answer free-comments'>
     &nbsp;

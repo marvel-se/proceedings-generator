@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% set active_page = "article_list.html" -%}
 
-{% block title %}Liste des contributions{% endblock title %}
+{% block title %}{{translate.article_list.list_contributions}}{% endblock title %}
 {% block content %}
-  <h1>Liste des contributions</h1>
+  <h1>{{translate.article_list.list_contributions}}</h1>
 
   {% import 'article_macros.html' as article_macros %}
   <ol class="article_list">

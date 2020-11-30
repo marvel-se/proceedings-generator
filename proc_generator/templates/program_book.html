@@ -5,14 +5,14 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Programme détaillé {{ event_name }}</title>
+  <title>{{translate.program_book.program}} {{ event_name }}</title>
   
   <link rel="stylesheet" href="{{ root_path }}/style-program.css">
 </head>
 
 <body>
 
-<h1>Programme détaillé</h1>
+<h1>{{translate.program_book.program_detail}}</h1>
 (version brute de mise en forme, pour intégration dans un traitement de texte)
 
 {% for day, day_group in sessions_groups|dictsort %}
@@ -22,8 +22,8 @@
   <h3 class='hours'> {{ begin.strftime('%Hh%M') }} — {{ end.strftime('%Hh%M') }} </h3>
   {% for s_id, ss in s_group|dictsort %}
     <h4 class='session-name'> {{ ss.type|title }} {{ s_id }} : {{ ss.name }}</h4>
-        <p class='location'>Salle : {{ ss.location}}</p>
-        <p class='chairmen'>Président(e){{ 's'
+        <p class='location'>{{translate.program_book.room}} : {{ ss.location}}</p>
+        <p class='chairmen'>{{translate.program_book.session_chair}}{{ 's'
             if ss.chairmen_split|count > 1 else ''}} :
         <br>
         {{ ss.chairmen_split|join('<br>') }}
@@ -44,9 +44,9 @@
   {% endfor %}
 {% endfor %}
 
-<h2>Index des auteurs</h2>
+<h2>{{translate.program_book.index}}</h2>
 
-<em>({{authors|count}} auteurs référencés)</em>
+<em>({{authors|count}} {{translate.program_book.references}})</em>
 
 {% import 'article_macros.html' as article_macros %}
 <ul class="author-list">

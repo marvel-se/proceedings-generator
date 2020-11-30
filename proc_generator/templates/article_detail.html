@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% import 'article_macros.html' as article_macros %}
-{% block title %}Fiche article {{
+
+{% block title %}{{translate.article_detail.article_files}} {{
     article_macros.etal(article.authors_split)
 }}{% endblock title %}
 {% block content %}
@@ -8,12 +9,12 @@
   {% if article.pdf -%}
   <a href="{{ root_path }}/{{ article.pdf }}" class='download-pdf available'>
     <img src='{{ root_path }}/images/pdf_icon.png' alt='pdf icon'>
-    <p>Article PDF</p>
+    <p>{{translate.article_detail.article_pdf}}</p>
   </a>
   {%- else -%}
   <div class='download-pdf not-available'>
     <img src='{{ root_path }}/images/pdf_icon.png' alt='pdf icon'>
-    <p>{{ translation.teste }}</p>
+    <p>{{translate.article_detail.presentation_pdf}}</p>
   </div>
   {%- endif %}
   
@@ -21,31 +22,28 @@
   <h1>{{ article.title }}</h1>
   
     <p>
-    <strong>Auteurs</strong> :
+    <strong>{{translate.article_detail.authors}}</strong> :
     {{ article_macros.authors(article.authors_split, root_path, with_affil=True) }}
     </p>
     
     <p><small>
-    <strong>Affiliations</strong> :
+    <strong>{{translate.article_detail.affiliations}}</strong> :
     {{ article.labos }}
     </small></p>
     
-    
     <p>
-    {%- if article.topic -%}
-    <strong>Thématique</strong> :
+    <strong>{{translate.article_detail.theme}}</strong> :
     <a href="{{ root_path }}/topics/topic_{{ topics_code.get(article.topic) }}.html">
         {{ article.topic }}</a>
-    {%- endif -%}
     <br>
-    <strong>Session</strong> :
+    <strong>{{translate.article_detail.session}}</strong> :
     <a href="{{ root_path }}/sessions/session_{{ article.id_session }}.html">
         {{ article.id_session }} "{{ sessions_details[article.id_session].name}}"</a>
     </p>
     
     {% if article.abstract %}
     <div class='abstract'>
-      <h3>Résumé</h3>
+      <h3>{{translate.article_detail.abstract}}</h3>
       <p>
       {{ article.abstract }}
       </p>

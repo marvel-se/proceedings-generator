@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>{% block title %}Actes de la conférence{% endblock %} - {{ event_name }}</title>
+  <title>{% block title %}{{{{translate.chair_eval_index.conference_proceedings}}}}{% endblock %} - {{ event_name }}</title>
   <meta name="description" content="Actes de la conférence {{ event_name }}">
   <meta name="author" content="organisateurs {{ event_name }}">
   <meta name="viewport" content="width=device-width">
@@ -24,42 +24,41 @@
 </header>
 
 <section class="content">
-  <h1>Fiches d'évaluation des sessions</h1>
+  <h1>{{translate.chair_eval_index.session_evaluation_file}}</h1>
     
     <p>
-    Documents à distribuer aux chairmen de chaque session, pour
-    l'évaluation des sessions et des présentations.
+    {{translate.chair_eval_index.documents}}
     </p>
     
     <p>
-    Pour chaque session il y a à remplir :
+    {{translate.chair_eval_index.form_session_instructions}}
     <ul>
-      <li>une fiche d'évaluation de la session</li>
-      <li>des fiches d'évaluation des présentation (une par contribution)</li>
+      <li>{{translate.chair_eval_index.a_session_evaluation_sheet}}</li>
+      <li>{{translate.chair_eval_index.the_presentation_evaluation_sheets}}</li>
     </ul>
     </p>
     
-    <h2>1) Ensemble des fiches</h2>
+    <h2>{{translate.chair_eval_index.files_list}}</h2>
     
     <p>
-    Fiches concaténées dans un fichiers, classées par session :
+    {{translate.chair_eval_index.sorted_files_by_session}}
     
      <ul>
-      <li>Télécharger les <a href='chairman_package.pdf'>fiches PDF</a></li>
-      <li>Voir les <a href='chairman_package.html'>fiches HTML</a></li>
+      <li>{{translate.chair_eval_index.download}} <a href='chairman_package.pdf'>{{translate.chair_eval_index.pdf}}</a></li>
+      <li>{{translate.chair_eval_index.see}} <a href='chairman_package.html'>{{translate.chair_eval_index.html}}</a></li>
     </ul>
     </p>
     
     <p>
-      Nombre de fiches "session" : {{sessions|count}}
+      {{translate.chair_eval_index.number_of_session_files}} : {{sessions|count}}
       <br>
-      Nombre de fiches "article" : {{articles|count}}
+      {{translate.chair_eval_index.number_of_article_files}} : {{articles|count}}
     </p>
     
-    <h2>2) Fiches séparées par sessions</h2>
+    <h2>{{translate.chair_eval_index.separated_files_by_session}}</h2>
     
     <p>
-      Cliquer sur une session pour télécharger la fiche PDF correspondante
+      {{translate.chair_eval_index.click_to_download}}
     </p>
     
   {% for day, day_group in sessions_groups|dictsort %}
@@ -79,7 +78,7 @@
             <br>({{ ss.id }})
             
             <div class='chairmen'>
-              <small>Président(e){{ 's'
+              <small>{{translate.chair_eval_index.session_chair}}{{ 's'
               if ss.chairmen_split|count > 1 else ''}} :
               </small>
             <br>
@@ -102,7 +101,7 @@
   <a href='{{ event_website }}'>{{ event_name }}</a>,
   {{ event_date }}, {{ event_location }}
   <br>
-  <small class='credits'>mise en forme web : {{ website_credits }} </small>
+  <small class='credits'>{{translate.chair_eval_index.web_design_credit}}{{ website_credits }} </small>
   {% endblock footer %}
 </footer>
 </div>

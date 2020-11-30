@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Compte-rendu de session</title>
+  <title>{{translate.chair_eval_session.session_summary}}</title>
 
   <link rel="stylesheet" href="print-style.css">
 </head>
@@ -14,26 +14,25 @@
 
 <div class='page'>
 
-  <h1>Documents pour les Chairmen</h1>
+  <h1>{{translate.chair_eval_session.chairing_documents}}</h1>
   
   <p>
-  Documents à distribuer aux chairmen de chaque session, pour
-  l'évaluation des sessions et des présentations.
+  {{translate.chair_eval_session.chairing_documents_description}}
   </p>
   
   <p>
-  Pour chaque session il y a à remplir :
+  {{translate.chair_eval_session.fill_out_for_each_session}}
   <ul>
-    <li>une fiche d'évaluation de la session</li>
-    <li>des fiches d'évaluation des présentation (une par contribution)</li>
+    <li>{{translate.chair_eval_session.a_session_evaluation_sheet}}</li>
+    <li>{{translate.chair_eval_session.the_presentation_evaluation_sheets}}</li>
   </ul>
-  (fiches classées par session)
+  {{translate.chair_eval_session.files_classified_by_session}}
   </p>
   
   <p>
-  Nombre de fiches "session" : {{sessions|count}}
+  {{translate.chair_eval_session.number_of_session_files}} : {{sessions|count}}
   <br>
-  Nombre de fiches "article" : {{articles|count}}
+  {{translate.chair_eval_session.number_of_article_files}} : {{articles|count}}
   </p>
 
 </div>
@@ -44,15 +43,15 @@
 <div class='page'>
 <img class='logo' src='{{ event_logo }}' alt="event's logo">
 
-<h1 class='title'>Compte-rendu de session</h1>
+<h1 class='title'>{{translate.chair_eval_session.session_summary}}</h1>
 <h2 class='subtitle'>{{ session.name }}</h2>
 
 
 <p class='chairmen'>
-  <strong>Président(es) de session</strong><sup>*</sup> :
+  <strong>{{translate.chair_eval_session.session_chair}}</strong><sup>*</sup> :
   {{ session.chairmen_split|join(' — ') }}
   <br>
-  <small><sup>*</sup> Entourez votre nom (et amendez/corrigez si nécessaire).</small>
+  <small><sup>*</sup> {{translate.chair_eval_session.verify_your_name}}</small>
 </p>
 
 <div class='info-box'>
@@ -69,17 +68,17 @@
   </p>
 
   <p>
-    Nombre de présentations réalisées :
+    {{translate.chair_eval_session.number_of_presentations_carried_out}}
     <span class='blank' style='width:3em;'>&nbsp;</span>
     (sur {{articles|count}} prévus)
   </p>
 </div>
 
 <div class='questions'>
-<h2 class='questions-title'>Votre évaluation de la session</h2>
+<h2 class='questions-title'>{{translate.chair_eval_session.your_session_evaluation}}</h2>
 
 <div class='question'>
-  <h3>Nombre approximatif de présents :</h3>
+  <h3>{{translate.chair_eval_session.approximate_number_attendees}}</h3>
 
   <p class='answer'>
     &nbsp;
@@ -87,57 +86,57 @@
 </div>
 
 <div class='question'>
-  <h3>Qualité globale des présentations :</h3>
+  <h3>{{translate.chair_eval_session.global_presentation_quality}}</h3>
 
   <table class='answer'>
     <tr>
-      <td>faible</td>
-      <td>moyenne</td>
-      <td>bonne</td>
-      <td>excellente</td>
+      <td>{{translate.chair_eval_session.insufficient}}</td>
+      <td>{{translate.chair_eval_session.average}}</td>
+      <td>{{translate.chair_eval_session.good}}</td>
+      <td>{{translate.chair_eval_session.excellent}}</td>
     </tr>
   </table>
 </div>
 
 <div class='question'>
-  <h3>Qualité des échanges et discussions :</h3>
+  <h3>{{translate.chair_eval_session.interaction_discussion_quality}}</h3>
 
   <table class='answer'>
     <tr>
-      <td>faible</td>
-      <td>moyenne</td>
-      <td>bonne</td>
-      <td>excellente</td>
+      <td>{{translate.chair_eval_session.insufficient}}</td>
+      <td>{{translate.chair_eval_session.average}}</td>
+      <td>{{translate.chair_eval_session.good}}</td>
+      <td>{{translate.chair_eval_session.excellent}}</td>
     </tr>
   </table>
 </div>
 
 <div class='question'>
-  <h3>La durée de la session est-elle :</h3>
+  <h3>{{translate.chair_eval_session.session_duration}}</h3>
 
   <table class='answer'>
     <tr>
-      <td>trop courte</td>
-      <td>appropriée</td>
-      <td>trop longue</td>
+      <td>{{translate.chair_eval_session.too_short}}</td>
+      <td>{{translate.chair_eval_session.appropriate}}</td>
+      <td>{{translate.chair_eval_session.too_long}}</td>
     </tr>
   </table>
 </div>
 
 <div class='question'>
-  <h3>Les conditions matérielles sont elles :</h3>
+  <h3>{{translate.chair_eval_session.physical_conditions}}</h3>
 
   <table class='answer'>
     <tr>
-      <td>mauvaises</td>
-      <td>moyennes</td>
-      <td>bonnes</td>
+      <td>{{translate.chair_eval_session.poor}}</td>
+      <td>{{translate.chair_eval_session.average}}</td>
+      <td>{{translate.chair_eval_session.good}}</td>
     </tr>
   </table>
 </div>
 
 <div class='question'>
-  <h3>Commentaires éventuels :</h3>
+  <h3>{{translate.chair_eval_session.optional_comments}}</h3>
 
   <p class='answer free-comments'>
     &nbsp;
@@ -146,7 +145,7 @@
 </div>
 
 <p class='thanks'>
-Le comité d’organisation SGE vous remercie vivement pour votre contribution et votre expertise, essentielles au symposium.
+{{translate.chair_eval_session.committee}}
 </p>
 
 </div><!--end div.page-->
@@ -156,9 +155,9 @@ Le comité d’organisation SGE vous remercie vivement pour votre contribution e
   <div class='page'>
     <img class='logo' src='{{ event_logo }}' alt="event's logo">
     <div class='header'>
-      Session {{ s_id }},
+      {{translate.chair_eval_session.session}} {{ s_id }},
       <br>
-      article {{ loop.index }}/{{ articles|count }}
+      {{translate.chair_eval_session.article}} {{ loop.index }}/{{ articles|count }}
     </div>
   {{ eval_presentation(art, session) }}
   </div><!--end div.page-->

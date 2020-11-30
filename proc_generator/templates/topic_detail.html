@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
-{% block title %}Topic "{{ topic }}"{% endblock title %}
+{% block title %}{{translate.topic_detail.topic}} "{{ topic }}"{% endblock title %}
 {% block content %}
 
-  <h1>Thématique "{{ topic }}"</h1>
+  <h1>{{translate.topic_detail.theme}} "{{ topic }}"</h1>
     
     <p>
-    {{articles|count}} articles dans cette thématique :
+    {{articles|count}} {{translate.topic_detail.articles}}
     </p>
     
     {% import 'article_macros.html' as article_macros %}
