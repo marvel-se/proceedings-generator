@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 french={
   "article_detail":{
     "article_files": "Fiche article",
