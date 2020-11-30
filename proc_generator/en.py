@@ -93,7 +93,7 @@ english = {
     "appropriate": "Appropriate",
     "too_long": "Too long",
     "physical_conditions": 'The material conditions are: ',
-    "faible": "Insufficient",
+    "insufficient": "Insufficient",
     "poor": "Poor",
     "average": "Average",
     "good": "Good",
