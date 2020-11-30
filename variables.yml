@@ -1,57 +1,117 @@
 proc_generator:
   templates:
     article_detail:
-      article_files: Fiche article(MISSING)
-      article_pdf: Article PDF(MISSING)
+      article_files: Fiche article
+      article_pdf: Article PDF
       presentation_pdf: Présentation PDF disponible prochainement
+      author: Auteurs(DONE)
       affiliations: Affiliations
+      theme: Thématique(DONE)
+      session: Session(DONE)
       abstract: Résumé
     article_list:
+      list: Liste des contributions(DONE)
     article_macros:
+      theme: Thématique(DONE)
+      session: Session(DONE)
     author_list: 
       list_authors: Liste des auteurs
     base:
+      acts: Actes de la conférence(DONE)
       web_formatting: mise en forme web
     chair_eval_index: 
+      acts: Actes de la conférence(DONE)
       session_evaluation_sheet: Fiches d'évaluation des sessions
       documents_shared_to_president_session: Documents à distribuer aux chairmen de chaque session, pour l'évaluation des sessions et des présentations.
       complete_for_each_session: 'Pour chaque session il y a à remplir :'
+      ficheII: une fiche d'évaluation de la session(DONE)
+      fichesIII: des fiches d'évaluation des présentation (une par contribution)(DONE)
       all_files: 1) Ensemble des fiches
       files_sorted_by_session: 'Fiches concaténées dans un fichiers, classées par session :'
       download: Télécharger les
       pdf_files: fiches PDF
       see: Voir les
       html_files: fiches HTML
+      nombre_session: Nombre de fiches "session"(DONE)
+      nombre_article: Nombre de fiches "article"(DONE)
       sheets_separated_by_session: 2) Fiches séparées par sessions
       download_pdf_files: Cliquer sur une session pour télécharger la fiche PDF correspondante
-      president: Président(e)
+      program_chair: Président(e)
       web_formatting: 'mise en forme web :'
     chair_eval_presentation:
       presentation_evaluation: Évaluation des présentations
-      contributions: Évaluation des contributions complètes dans l'optique de leur présélection pour publication dans des revues partenaires.
+      contributions_evaluation: Évaluation des contributions complètes dans l'optique de leur présélection pour publication dans des revues partenaires.
+      president_session: Président(es) de session(DONE)
+      entourez: Entourez votre nom (et amendez/corrigez si nécessaire).(DONE)
       title: Titre
+      author: Auteurs(DONE)
       presented_by: 'Présentée par :'
       presentation_article: Votre évaluation de l'article et de la présentation
-      contribution: 'Contenu scientifique de la contribution complète :'
-      faible: faible
+      scientific_content__of_contribution: 'Contenu scientifique de la contribution complète :'
+      low: faible
+      moyenne: moyenne(DONE)
+      bonne: bonne(DONE)
       excellent: excellente
-      originality_work_presented: 'Originalité des travaux présentés :'
-      qualite: 'Qualité de la présentation orale ou poster :'
-      echanges: 'Qualité des échanges :'
-      note: 'Note globale de la contribution :'
-      publication: Publication dans une revue partenaire
-      concernant: 'Concernant la présélection par le CS SGE de la contribution pour publication dans une revue internationale partenaire, êtes vous :'
-      défavorable: défavorable
-      plutôt_def: plutôt défavorable
-      plutôt_fav: plutôt favorable
+      originality_of_the_work: 'Originalité des travaux présentés :'
+      quality_of_the_oral_presentation: 'Qualité de la présentation orale ou poster :'
+      interaction_quality: 'Qualité des échanges :'
+      overall_rating_of_contribution: 'Note globale de la contribution :'
+      publication_in_a_journal: Publication dans une revue partenaire
+      contribution_for_publication: 'Concernant la présélection par le CS SGE de la contribution pour publication dans une revue internationale partenaire, êtes vous :'
+      unfavorable: défavorable
+      rather_unfavorable: plutôt défavorable
+      rather_favorable: plutôt favorable
       favorable: favorable
       nb: 'NB : Si le papier est présélectionné, il sera procédé à un reviewing conforme aux règles des revues partenaires (EJEE, EPE, EJAP). Ce reviewing sera réalisé par un comité ad-hoc sur la base de la version complète en langue anglaise de l’article SGE.'
+      comment: optional_comments(DONE)
     chair_eval_session: 
+      session: session_summary(DONE)
+      documents: chair_documents(DONE)
+      docs: chair_documents_description(DONE)
+      pour: fill_out_for_each_session(DONE)
+      eval_session: a_session_evaluation_sheet(DONE)
+      eval_sessionI: the_presentation_evaluation_sheets(DONE)
+      classe: files_classified_by_session(DONE)
+      nombre_session: number_of_session_files(DONE)
+      nombre_article: number_of_article_files(DONE)
       compte: Compte-rendu de session(session_summary)(DONE) ****(trocar todos os 'president' para 'chair')
+      president_session: session_chair(DONE)
+      entourez: verify_your_name(DONE)
+      nombre_presentation: number_of_presentations_carried_out(DONE)
+      votre: your_session_evaluation(DONE)
+      nombre_approx: approximate_number_attendees(DONE)
+      qualite: global_presentation_quality(DONE)
+      qualite_discus: interaction_discussion_quality(DONE)
+      duree: session_duration(DONE)
+      trop: too_short(DONE)
+      appro: appropriate(DONE)
+      trop_longue: too_long(DONE)
+      cond_materiel: physical_conditions(DONE)
       faible: ****faible(MISSING, alternativa->"low/weak")
+      mauvaises: poor(DONE)
+      moyennes: average(DONE)
+      bonnes: good(DONE)
       excellente: ****excellente(MISSING, alternativa->excellent)
+      comment: optional_comments(DONE)
       comite: ****Le comité d’organisation SGE vous remercie vivement pour votre contribution et votre expertise, essentielles au symposium.
+      sess: session(DONE)
+      article: article(DONE)
     index:
+      acts: conference_proceedings(DONE)
+      list: list_all_contributions(DONE)
+      program: session_program(DONE)
+      author: authors(DONE)
+      site: website(DONE)
+      theme: Thématiques(DONE)
+      sponsor: sponsors(DONE)
     lab_list:
-      labs_list: ****Liste des laboratoire(MISSING)
+      labs_list: ****Liste des laboratoire
+      lab: labs(DONE)
+      list_contribution: list_contributions(DONE)replace by->list_of_contributions
+    session_detail:
+      session_title: Session
+      lsession: session
+      president: Président(e)(program_chair)
+      articles: 'articles dans cette session :'
+      return: Retour à la liste des sessions
     
