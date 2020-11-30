@@ -46,7 +46,7 @@
 {%- endmacro %}
 
 
-{% macro list_details(articles, root_path) -%}
+{% macro list_details(articles, root_path, translate) -%}
 {% for art in articles %}
   <li>
     {{ authors(art.authors_split, root_path, with_affil=True)|indent(4) }}.

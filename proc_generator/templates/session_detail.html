@@ -36,7 +36,7 @@
   
   {% import 'article_macros.html' as article_macros %}
     <ul class="article_list">
-    {{ article_macros.list_details(sessions[session.id], root_path) }}
+    {{ article_macros.list_details(sessions[session.id], root_path, translate) }}
     </ul>
   
   <nav>
